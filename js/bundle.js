@@ -48,21 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     events.forEach((listen) => {
       element.addEventListener(listen, (e) => {
         logger(element.closest('section').getElementsByClassName('logger')[0],
-          'log',
+          listen === 'error.td' ? 'error' : 'log',
           `${element.getAttribute('id')} -> ${listen}:`, JSON.stringify(e.detail, null, 2));
       });
     });
   });
-
-  const sideBar = document.getElementById('mainToc');
-
-  if (sideBar) {
-    const activeLink = [...sideBar
-      .getElementsByTagName('a')]
-      .find(x => x.href === window.location.href);
-    activeLink?.closest('div').parentElement.children[0].click();
-    activeLink?.classList.add('active');
-  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
