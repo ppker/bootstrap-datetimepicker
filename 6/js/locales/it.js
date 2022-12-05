@@ -1,5 +1,5 @@
 /*!
-  * Tempus Dominus v6.0.0-beta8 (https://getdatepicker.com/)
+  * Tempus Dominus v6.2.7 (https://getdatepicker.com/)
   * Copyright 2013-2022 Jonathan Peterson
   * Licensed under MIT (https://github.com/Eonasdan/tempus-dominus/blob/master/LICENSE)
   */
@@ -14,14 +14,14 @@ const localization = {
     selectYear: 'Seleziona anno',
     previousYear: 'Anno precedente',
     nextYear: 'Anno successivo',
-    selectDecade: 'Seleziona Decennio',
+    selectDecade: 'Seleziona decennio',
     previousDecade: 'Decennio precedente',
     nextDecade: 'Decennio successivo',
     previousCentury: 'Secolo precedente',
     nextCentury: 'Secolo successivo',
-    pickHour: "Seleziona l'ora",
-    incrementHour: "Incrementa l'ora",
-    decrementHour: "Decrementa l'ora",
+    pickHour: 'Seleziona l\'ora',
+    incrementHour: 'Incrementa l\'ora',
+    decrementHour: 'Decrementa l\'ora',
     pickMinute: 'Seleziona i minuti',
     incrementMinute: 'Incrementa i minuti',
     decrementMinute: 'Decrementa i minuti',
@@ -33,5 +33,15 @@ const localization = {
     selectDate: 'Seleziona una data',
     dayViewHeaderFormat: { month: 'long', year: '2-digit' },
     locale: 'it',
-    startOfTheWeek: 1
+    startOfTheWeek: 1,
+    dateFormats: {
+        LT: 'HH:mm',
+        LTS: 'HH:mm:ss',
+        L: 'DD/MM/YYYY',
+        LL: 'D MMMM YYYY',
+        LLL: 'D MMMM YYYY HH:mm',
+        LLLL: 'dddd D MMMM YYYY HH:mm'
+    },
+    ordinal: n => `${n}º`,
+    format: 'L LT'
 };exports.localization=localization;exports.name=name;Object.defineProperty(exports,'__esModule',{value:true});}));

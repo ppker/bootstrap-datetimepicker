@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 
-  <title>Introduction - Tempus Dominus</title>
+  <title>Plugins - FloatingUI - Tempus Dominus</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -15,20 +15,20 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <meta name="title" content="Introduction">
-  <meta name="description" content="Introduction to Eonasdan's date time picker.
+  <meta name="title" content="Plugins - FloatingUI">
+  <meta name="description" content="How to use FloatingUI plugin with Tempus Dominus.
   ">
 
   
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://getdatepicker.com/docs/6//index.html">
-  <meta property="og:title" content="Introduction">
-  <meta property="og:description" content="Introduction to Eonasdan's date time picker.
+  <meta property="og:url" content="https://getdatepicker.com/docs/6//plugins/floating-ui.html">
+  <meta property="og:title" content="Plugins - FloatingUI">
+  <meta property="og:description" content="How to use FloatingUI plugin with Tempus Dominus.
   ">
   <meta class="metaImage" property="og:image" content="">
 
-  <meta property="article:published_time" content="2021-07-08T00:00:00.000Z">
-  <meta property="article:modified_time" content="2021-07-08T00:00:00.000Z">
+  <meta property="article:published_time" content="2022-09-13T00:00:00.000Z">
+  <meta property="article:modified_time" content="2022-09-13T00:00:00.000Z">
   <meta property="article:tag" content="datepicker, javascript, open source, tempus dominus, eonasdan">
   <meta property="article:author" content="Jonathan Peterson">
   <meta property="article:section" content="Technology">
@@ -37,9 +37,9 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:site" content="@eonasdan">
   <meta property="twitter:creator" content="@eonasdan">
-  <meta property="twitter:url" content="https://getdatepicker.com/docs/6//index.html">
-  <meta property="twitter:title" content="Introduction">
-  <meta property="twitter:description" content="Introduction to Eonasdan's date time picker.
+  <meta property="twitter:url" content="https://getdatepicker.com/docs/6//plugins/floating-ui.html">
+  <meta property="twitter:title" content="Plugins - FloatingUI">
+  <meta property="twitter:description" content="How to use FloatingUI plugin with Tempus Dominus.
   ">
   <meta class="metaImage" property="twitter:image" content="">
   <link rel="stylesheet" href="/css/styles.min.css">
@@ -245,7 +245,7 @@
 <main class="bd-main order-1">
   <div class="bd-intro ps-lg-4">
     <div class="d-md-flex align-items-center justify-content-between">
-      <h1 class="bd-title title" id="content">Introduction</h1>
+      <h1 class="bd-title title" id="content">Plugins - FloatingUI</h1>
     </div>
   </div>
   <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-muted d-none" id="tocContainer">
@@ -263,22 +263,33 @@
   </div>
   <div id="mainContent" class="bd-content ps-lg-4">
   <div class="row">
-    <p class="lead mb-4">
-      Tempus Dominus is the successor to the very popular "eonasdan/bootstrap-datetimepicker". The plugin provides a wide array of options that allow developers to provide date and or time selections to users as simple pickers, date of birth selection, appointments and more.
-    </p>
+    <h3>Floating UI</h3>
     <p>
-      If you're looking for installation instructions check out the <a href="installing.html">download page</a>.
+      By default, @popperJS/core is required for the popper to work correctly. Alternatively, we can remove popper and use
+      <a href="https://github.com/floating-ui/floating-ui" target="_blank" rel="noopener">FloatingUI</a> by creating a plugin that handles the popup creation.
     </p>
-    <p>
-      Once you get it installed there are plenty of <a href="repl.html">examples</a> and a <a href="https://stackblitz.com/@Eonasdan/collections/tempus-dominus">stackblitz</a>.
-    </p>
-    <h2>Get involved</h2>
-    <ul>
-      <li>You can check out <a href="https://jonathanpeterson.com" rel="noopener" target="_blank">my blog</a>.</li>
-      <li>Join <a href="https://discord.gg/BHS9jw9YPf" rel="noopener nofollow" target="_blank">the discord</a></li>
-      <li>Check out the <a href="https://github.com/Eonasdan/tempus-dominus/discussions" rel="noopener" target="_blank">discussions</a></li>
-    </ul>
   </div>
+
+  <div class="row">
+    <pre><code class="language-js">
+import { computePosition } from '@floating-ui/dom';
+
+const datetimepicker1 = new tempusDominus.TempusDominus(document.getElementById('datetimepicker1'));
+
+datetimepicker1.display.createPopup = computePosition(element, widget, options).then(({ x, y }) =&gt; {
+    Object.assign(widget.style, {
+      left: `${x}px`,
+      top: `${y}px`,
+      position: 'absolute',
+    });
+  });
+</code>
+    </pre>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" integrity="sha512-Qc+cBMt/4/KXJ1F6nNQahXIsgPygHM4S2XWChoumV8qkpZ9oO+gBDBEpOxgbkQQ/6DlHx6cUxa5nBhEbuiR8xw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/fontawesome.min.js" integrity="sha512-KCwrxBJebca0PPOaHELfqGtqkUlFUCuqCnmtydvBSTnJrBirJ55hRG5xcP4R9Rdx9Fz9IF3Yw6Rx40uhuAHR8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </div>
 </main>
 </div>
