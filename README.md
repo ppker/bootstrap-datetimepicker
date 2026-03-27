@@ -2,7 +2,7 @@
 
 # Paid support only
 
-Please note that I'm moving on to other projects. New issues will need to be sponsored. This can be done via BountySource or my other donation links. Please reach out to me first so we can discuss the terms. Thank you for your years of support.
+Please note that I'm moving on to other projects. New issues will need to be sponsored. Please reach out to me first so we can discuss the terms. Thank you for your years of support.
 
 # Tempus Dominus Date/Time Picker v6.9.4
 
